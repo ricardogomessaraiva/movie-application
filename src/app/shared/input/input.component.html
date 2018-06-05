@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label>{{label}}</label>
+  <label class="control-label sr-only" for="inputSuccess">
+    <i class="fa fa-check"></i> {{label}}</label>
+    <!--CONTENT PROJECTION -->
+  <ng-content></ng-content>
+
+  <div *ngIf="hasSuccess()">
+    <span class="text-success">{{successMessage}}</span>
+  </div>
+  <div *ngIf="hasError()">
+    <span class="text-danger">{{errorMessage}} </span>
+  </div>
+</div>

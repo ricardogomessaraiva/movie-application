@@ -1,0 +1,14 @@
+<!-- Movies Content -->
+
+<!-- CONTENT PROJECTION-->
+<mov-header label="Filmes cadastrados"></mov-header>
+
+<!-- Page Features -->
+<div class="row">
+  <div class="col-sm-6 col-xs-12 mt-2" *ngFor="let movie of movies">
+    <div class="rounded">
+      <!--MOVIE COMPONENT-->
+      <mov-movie [movie]="movie"></mov-movie>
+    </div>
+  </div>
+</div>

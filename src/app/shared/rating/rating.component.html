@@ -1,0 +1,18 @@
+<div class="card-deck">
+  <div style="cursor: pointer" *ngFor="let r of rates" (click)="setRate(r)" (mouseenter)="mouseEnter(r)" (mouseleave)="mouseLeave(r)"
+    class="card border border-dark">
+    <div class="text-center mt-4">
+      <img *ngIf="r.id=='like'" style="height: 50px; width: 50px" [src]="r.iconPath">
+      <img *ngIf="r.id=='soso'" style="height: 50px; width: 50px" [src]="r.iconPath">
+      <img *ngIf="r.id=='dislike'" style="height: 50px; width: 50px" [src]="r.iconPath">      
+    </div>
+
+    <div class="card-body text-center">
+      <h5 class="card-title">{{r.description}}</h5>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="Digite sua opinião"  maxlength="100" rows="3"
+        [(ngModel)]="r.comment"></textarea>
+      </div>      
+    </div>
+  </div>
+</div>

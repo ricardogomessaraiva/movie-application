@@ -1,0 +1,73 @@
+<!--INICIO DO CONTEUDO-->
+<!-- CONTENT PROJECTION-->
+<mov-header label="Cadastro novo filme"></mov-header>
+
+<!-- REACTIVE FORMS -->
+<form [formGroup]="newMovieForm" novalidate>
+  <div class="col-12 border border-dark">
+    <!-- CONTENT PROJECTION-->
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 mt-3">
+
+        <mov-input-container label="URL da imagem" successMessage="Muito bom!" errorMessage="* Oops! Informe uma url válida!">
+          <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="imageURL" placeholder="Digite ou cole a URL da imagem">
+        </mov-input-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 mt-3">
+
+        <mov-input-container label="Nome do filme" successMessage="Muito bom!" errorMessage="* Oops! Informe um nome válido!">
+          <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="name" placeholder="Digite o nome do filme">
+        </mov-input-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 mt-3">
+
+        <mov-input-container label="Categoria" successMessage="Muito bom!" errorMessage="* Oops! Informe a categoria">
+          <select class="form-control form-control-lg" autocomplete="off" formControlName="category">
+            <option>Ação</option>
+            <option>Aventura</option>
+            <option>Biografia</option>
+            <option>Comédia</option>
+            <option>Drama</option>
+            <option>Fantasia</option>
+            <option>Faroeste</option>
+            <option>Guerra</option>
+            <option>Terror</option>
+            <option>Suspense</option>
+            <option>Ficção</option>
+            <option>Policial</option>
+          </select>
+        </mov-input-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 mt-3">
+
+        <mov-input-container label="Sinopse" successMessage="Muito bom!" errorMessage="* Oops! Informe uma sinopse válida!">
+          <textarea rows="3" class="form-control form-control-lg" autocomplete="off" formControlName="sinopse" placeholder="Digite a sinopse do filme">
+          </textarea>
+
+        </mov-input-container>
+      </div>
+    </div>
+
+    <!-- CONTENT PROJECTION FIM-->
+
+    <div class="row">
+      <div class="col-12 col-xs-12 mt-3 mb-3">
+        <button [disabled]="!newMovieForm.valid " (click)="save()" class="btn btn-dark pull-right">
+          <i class="fa fa-credit-card"></i> Cadastrar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

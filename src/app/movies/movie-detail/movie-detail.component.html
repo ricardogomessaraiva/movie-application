@@ -1,0 +1,37 @@
+<!-- CONTENT PROJECTION-->
+<mov-header label="Detalhes do filme"></mov-header>
+
+
+<div class="card border-dark" style="cursor: pointer">
+    <img class="card-img-top" [src]="movie?.imagePath" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title text-center font-weight-bold">{{movie?.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-center text-muted">Gênero: {{movie?.category}}</h6>
+        <p class="card-text text-left mt-4">
+            <u>
+                <span class="font-weight-bold font-italic">Sinopse: </span>
+            </u>
+            {{movie?.sinopse}}</p>
+    </div>
+    <div class="card-footer text-center">
+        <small class="text-muted">Por {{movie?.createdBy}}</small>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" id="rated-tab" data-toggle="tab" routerLinkActive="active" [routerLink]="['rated']" role="tab" aria-controls="rated" aria-selected="true">Avaliações</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="rating-tab" data-toggle="tab" routerLinkActive="active" [routerLink]="['rating']" role="tab" aria-controls="profile"
+            aria-selected="false">Avaliar</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <!-- RATED AND RATING -->
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,15 @@
+<div (click)="movieDetails(movie)" style="cursor: pointer">
+  <div class="card border-dark">
+    <img class="card-img-top" [src]="movie.imagePath">
+    <div class="card-body">
+      <h5 class="card-title text-center font-weight-bold">{{movie.name}}</h5>
+      <div class="col-12 text-truncate">
+        {{movie.sinopse}}
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <small class="text-muted">Por {{movie.createdBy}}</small>
+    </div>
+  </div>
+</div>
+<!--MOVIE -->

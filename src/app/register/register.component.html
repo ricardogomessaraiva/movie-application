@@ -1,0 +1,101 @@
+<mov-header label="Cadastrar-se">
+</mov-header>
+
+<!-- REACTIVE FORMS -->
+<form [formGroup]="formRegister" novalidate>
+  <div class="col-12 border border-dark">
+    <div class="row">
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Nome completo" successMessage="Muito bom!" errorMessage="* Oops! Informe um nome válido!">
+          <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="fullname" placeholder="Digite seu nome completo">
+        </mov-input-container>
+
+      </div>
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Usuário" successMessage="Muito bom!" errorMessage="* Oops! Informe um usuário válido!">
+          <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="username" placeholder="Digite o usuário de acesso">
+        </mov-input-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-xs-6 mt-3">
+  
+          <mov-input-container label="Cidade/Estado" successMessage="Muito bom!">
+            <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="city" placeholder="Ex. São Paulo/SP">
+          </mov-input-container>
+  
+        </div>
+        <div class="col-sm-6 col-xs-6 mt-3">
+  
+          <mov-input-container label="Hobby" successMessage="Muito bom!">
+            <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="hobby" placeholder="Digite um hobby">
+          </mov-input-container>
+  
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-12 col-xs-12 mt-3">
+    
+            <mov-input-container label="Frase" successMessage="Muito bom!">
+              <input type="text" class="form-control form-control-lg" autocomplete="off" formControlName="slogan" placeholder="Diga à todos o seu lema de vida">
+            </mov-input-container>
+    
+          </div>                  
+        </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Senha" successMessage="Muito bom!" errorMessage="* Oops! Informe uma senha válida!">
+          <input type="password" class="form-control form-control-lg" autocomplete="off" formControlName="password" placeholder="Digite a senha de acesso">
+        </mov-input-container>
+
+      </div>
+
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Confirmação" successMessage="Muito bom!" errorMessage="* Oops! Digite a confirmação da senha!">
+          <input type="password" class="form-control form-control-lg" autocomplete="off" formControlName="confirmePassword" placeholder="Confirme a senha digitada">
+        </mov-input-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Foto" successMessage="Muito bom!" errorMessage="* Oops! Selecione uma imagem!">
+          <input type="file" class="form-control form-control-lg" autocomplete="off" formControlName="file">
+        </mov-input-container>
+
+      </div>
+
+      <div class="col-sm-6 col-xs-6 mt-3">
+
+        <mov-input-container label="Idade" successMessage="Muito bom!" errorMessage="* Oops! Idade inválida!">
+          <input type="number" class="form-control form-control-lg" autocomplete="off" formControlName="age" placeholder="Informe sua idade">
+        </mov-input-container>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-xs-12 mt-3 mb-3">
+        <div>
+          <button [disabled]="!formRegister.valid" (click)="save()" class="btn btn-dark pull-right">
+            <i class="fa fa-credit-card"></i> Salvar
+          </button>
+        </div>
+
+        <div class="mt-3">
+          <a [routerLink]="['/login']">Já possui uma conta?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
